@@ -39,19 +39,4 @@ public class Produto {
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-    public void altQuantidade(int quantidade) {
-        this.quantidade += quantidade;
-    }
-
-    public void exibirProduto(){
-        System.out.println("Produto - "+getNome());
-        System.out.println("Preço - "+getPreco());
-        System.out.println("Quantidade - "+getQuantidade());
-        if (descricao != null) {
-            System.out.println("Descrição - "+getDescricao());
-        }
-    }
 }

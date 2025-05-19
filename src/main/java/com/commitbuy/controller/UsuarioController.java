@@ -7,7 +7,7 @@ import com.commitbuy.model.Usuario;
 import com.commitbuy.util.StringUtils;
 
 public class UsuarioController {
-    public boolean cadastrarCliente(String nome, String email, String username, String senha) {
+    public static boolean cadastrarCliente(String nome, String email, String username, String senha) {
         if (!StringUtils.isEmailValido(email)) {
             System.out.println("Email invalido!");
             return false;
@@ -68,6 +68,7 @@ public class UsuarioController {
         UsuarioDB.usuarios.add(novoUsuario);
         System.out.println("Usuario " + username + " tornou-se administrador com sucesso!");
     }
+
     public static void tornarCliente(Usuario usuario) {
         String username = usuario.getUsername();
         String senha = usuario.getSenha();
@@ -76,5 +77,20 @@ public class UsuarioController {
         Usuario novoUsuario = new Cliente(email, nome, username, senha);
         UsuarioDB.usuarios.add(novoUsuario);
         System.out.println("Usuario " + username + " tornou-se cliente com sucesso!");
+    }
+
+    public static Usuario buscarUsuarioPorUsername(String username) {
+        for (Usuario u : UsuarioDB.usuarios) {
+            if (u.getUsername().equalsIgnoreCase(username)) {
+                return u;
+            }
+        }
+        return null;
+    }
+
+    public static void exibirDadosUsuario(Usuario usuario) {
+        System.out.println("Dados do usuario: " + usuario.rule().toUpperCase() + " - " + usuario.getUsername());
+        System.out.println("Nome: " + usuario.getNome());
+        System.out.println("Email: " + usuario.getEmail());
     }
 }

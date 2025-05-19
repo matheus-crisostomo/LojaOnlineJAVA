@@ -43,4 +43,13 @@ public class ProdutoController {
         p.setQuantidade(quantidade);
         System.out.println("Quantidade atualizada com sucesso!");
     }
+    public static void altPreco(int index, double preco) {
+        if (index < 1 || index > ProdutoDB.produtos.size()) {
+            System.out.println("Index invalido!");
+            return;
+        }
+        Produto p = ProdutoDB.produtos.get(index);
+        p.setPreco(preco);
+        System.out.println("Preco atualizado com sucesso!");
+    }
 }

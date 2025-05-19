@@ -29,4 +29,13 @@ public class Pedido {
     public Carrinho getCarrinho() {
         return carrinho;
     }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public LocalDateTime getData() {
+        return data;
+    }
+
 }

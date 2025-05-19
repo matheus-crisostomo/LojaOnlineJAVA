@@ -15,7 +15,9 @@ public class InputUtils {
             System.out.println("Entrada invalida! digite um número inteiro!");
             sc.next();
         }
-        return sc.nextInt();
+        int valor = sc.nextInt();
+        sc.nextLine();
+        return valor;
     }
     public static double lerDouble(String mensagem){
         System.out.println(mensagem);
@@ -23,6 +25,8 @@ public class InputUtils {
             System.out.println("Entrada invalida! Digite um número real!");
             sc.next();
         }
-        return sc.nextDouble();
+        double valor = sc.nextDouble();
+        sc.nextLine();
+        return valor;
     }
 }
